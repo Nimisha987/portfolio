@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nimisha Agrawal - Full Stack and AIML Developer</title>
+<meta name="description" content="Frontend developer building with Next.js, React and TypeScript.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Pixelify+Sans:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f5f2; --card:#ffffff; --fg:#161616; --muted:#6f6f6b; --line:#dededa; --pill:#161616; --pill-fg:#f5f5f2; --glow:#c9d2f0;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0d0d0d;--card:#131313;--fg:#ececea;--muted:#8a8a86;--line:#262626;--pill:#ececea;--pill-fg:#0d0d0d;--glow:#2c3a78}
+}
+:root[data-theme="dark"]{--bg:#0d0d0d;--card:#131313;--fg:#ececea;--muted:#8a8a86;--line:#262626;--pill:#ececea;--pill-fg:#0d0d0d;--glow:#2c3a78}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+main{max-width:680px;margin:0 auto;padding:64px 20px 0}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;text-decoration-thickness:1px}
+a:hover{text-decoration-color:currentColor}
+a:focus-visible,button:focus-visible{outline:2px solid var(--fg);outline-offset:3px;border-radius:6px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+h1{font-size:20px;font-weight:600;margin:0;line-height:1.3}
+h1 small{display:block;font-size:14px;font-weight:400;color:var(--muted);margin-top:2px}
+.tagline{color:var(--muted);margin:14px 0 0;max-width:46ch}
+#theme{flex:none;background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:5px 14px;font:inherit;font-size:13px;cursor:pointer}
+#theme:hover{color:var(--fg)}
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.socials a{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 14px;font-size:14px;color:var(--muted)}
+.socials a:hover{color:var(--fg);border-color:var(--muted)}
+h2{font-size:15px;font-weight:400;color:var(--muted);margin:72px 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px 26px 22px;margin-bottom:16px}
+.card h3{font-size:16px;font-weight:500;margin:0;line-height:1.5}
+.card h3 .badge{font-size:12px;color:var(--muted);margin-left:6px}
+.date{font-size:13px;color:var(--muted);text-transform:uppercase;margin-top:4px}
+.summary{color:var(--muted);margin:18px 0 0}
+.sub{color:var(--muted);margin:2px 0 0}
+.desc{color:var(--muted);margin:18px 0 0}
+.points{list-style:none;margin:22px 0 0;padding:0 0 0 30px;position:relative}
+.points::before{content:"";position:absolute;left:4px;top:12px;bottom:12px;width:1px;background:var(--line)}
+.points li{position:relative;margin-bottom:22px}
+.points li:last-child{margin-bottom:4px}
+.points li::before{content:"";position:absolute;left:-30px;top:10px;width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.points b{font-weight:500;display:block}
+.points span{display:block;color:var(--muted);margin-top:2px}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.pill{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 18px;font-size:14px}
+.pill:hover{border-color:var(--muted)}
+.pill.primary{background:var(--pill);color:var(--pill-fg);border-color:var(--pill)}
+.pill svg{width:16px;height:16px;fill:currentColor}
+.skill{display:grid;grid-template-columns:110px 1fr;gap:4px 16px;margin-bottom:16px}
+.skill:last-child{margin-bottom:0}
+.skill dt{color:var(--muted)}
+.skill dd{margin:0}
+@media (max-width:520px){.skill{grid-template-columns:1fr}}
+.sig{margin-top:96px;height:220px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;
+  background:radial-gradient(ellipse 70% 60% at 50% 110%,var(--glow),transparent 70%)}
+.sig span{font-family:"Pixelify Sans","Geist Mono",monospace;font-size:clamp(72px,26vw,170px);line-height:.8;margin-bottom:-.12em;letter-spacing:-.02em;
+  color:var(--muted);opacity:.55;-webkit-mask-image:linear-gradient(#000 40%,transparent 100%);mask-image:linear-gradient(#000 40%,transparent 100%);user-select:none}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <h1><span id="name"></span><small id="handle"></small></h1>
+    <button id="theme" type="button" aria-label="Toggle light or dark theme">theme</button>
+  </div>
+  <p class="tagline" id="tagline"></p>
+  <nav class="socials" id="socials" aria-label="Social links"></nav>
+
+  <h2>Experience</h2>
+  <section id="experience"></section>
+
+  <h2>Work</h2>
+  <section id="work"></section>
+
+  <h2>Skills</h2>
+  <section id="skills" class="card"></section>
+
+  <h2>Highlights</h2>
+  <section id="highlights"></section>
+
+  <h2>Education</h2>
+  <section id="education"></section>
+</main>
+<div class="sig" aria-hidden="true"><span id="sig"></span></div>
+
+<script>
+/* ====== EDIT ONLY THIS PART ====== */
+const DATA = {
+  name: "Nimisha Agrawal",
+  handle: "@Nimisha987",
+  tagline: "Full-stack and AI/ML developer. I build LLM products and ML models, and take them from idea to a live deployment with Python, React, Next.js and TypeScript.",
+  socials: [
+    { label: "github", url: "https://github.com/Nimisha987" },
+    { label: "linkedin", url: "https://www.linkedin.com/in/nimishaagrawal15/" },
+    { label: "email", url: "mailto:nimishaagrawal115@gmail.com" }
+  ],
+  experience: [
+    {
+      role: "research intern",
+      org: "CSIR-4PI",
+      orgUrl: "",
+      badge: "",
+      dates: "may 2026 – present",
+      summary: "Remote. Project: multi-modal malnutrition prediction, fusing image and tabular data.",
+      points: [
+        { title: "Early-fusion model", text: "A MobileNetV2 CNN (TensorFlow/Keras) with LightGBM, combining images with clinical and anthropometric data. Includes sex-stratified fairness checks, under mentor code review." },
+        { title: "Evaluation fixes", text: "Leakage-safe child-level GroupKFold splits, baseline comparisons, AUPRC with Youden-threshold selection and Grad-CAM. Found a data bottleneck: only about 40 of 231 age-eligible children had valid image data." }
+      ]
+    },
+    {
+      role: "AIML intern",
+      org: "MakeWithUs",
+      orgUrl: "",
+      badge: "",
+      dates: "2026",
+      summary: "Software agency in Trivandrum, Kerala. Remote.",
+      points: [
+        { title: "Document-automation platform", url: "https://github.com/Nimisha987/docautomation", text: "Full stack with FastAPI, React/Vite, OpenRouter, SQLite, PyMuPDF and spaCy. Template-card selection, AI document generation, debounced auto-save, and an AI classifier with hard-rule fallbacks." },
+        { title: "Code-review cycles", text: "Acted on senior engineers' feedback about an unclear single-prompt flow and shipped a redesigned two-stage conversational intake pipeline (gathering, then generation)." }
+      ]
+    },
+    {
+      role: "frontend contributor",
+      org: "Beonsys",
+      orgUrl: "",
+      badge: "",
+      dates: "",
+      summary: "Frontend work on a financial-statement review portal with Next.js, React, TypeScript, TanStack Query and shadcn/ui.",
+      points: [
+        { title: "Start processing and live progress", text: "Built the action and a progress view that polls the server using useMutation and refetchInterval." },
+        { title: "MSW mocks", text: "Mocked the new API routes, including 409 errors that show the server message, so the feature could be built and tested without the backend." },
+        { title: "Playwright end-to-end tests", text: "Covered the disabled state, run start and progress to completion. All 23 tests passed." },
+        { title: "Upload status fix and PR workflow", text: "Made upload status text match the real document state. Shipped through a fork-based PR with CI and code review." }
+      ]
+    },
+    {
+      role: "open-source contributor",
+      org: "MetaRoCE",
+      orgUrl: "",
+      badge: "",
+      dates: "",
+      summary: "Added explicit RTO configuration for slow receivers.",
+      points: [
+        { title: "Pull Request #1", text: "Resolved upstream merge conflicts in C++ source and tests, and submitted the update on GitHub." }
+      ]
+    },
+    {
+      role: "repository explorer",
+      org: "LangChain and Amazon SageMaker Python SDK",
+      orgUrl: "",
+      badge: "",
+      dates: "",
+      summary: "Forked both repositories to study their architecture and find ways to contribute.",
+      points: [
+        { title: "LangChain", text: "A Python agent engineering platform." },
+        { title: "Amazon SageMaker Python SDK", text: "The Python SDK for training and deploying machine learning models on SageMaker." }
+      ]
+    }
+  ],
+  work: [
+    {
+      name: "customer support ai", kind: "an AI customer support chatbot",
+      desc: "Streams LLM tokens in real time over Server-Sent Events, with automatic model fallback. Uses RAG to bring in company context, plus intent detection and voice input through the Web Speech API. Built with Next.js, TypeScript and OpenRouter.",
+      links: [{ label: "visit", url: "https://customer-support-ai-gilt.vercel.app/" }, { label: "source", url: "https://github.com/Nimisha987/CustomerSupportAI" }]
+    },
+    {
+      name: "refract", kind: "an AI UX research insights platform",
+      desc: "Turns customer interview transcripts into sentiment, pain points, feature requests and summaries, and syncs the insights to Google Docs. React frontend with a Flask and SQLAlchemy backend.",
+      links: [{ label: "visit", url: "https://refract-ai-vert.vercel.app/" }, { label: "source", url: "https://github.com/Nimisha987/RefractAI" }]
+    },
+    {
+      name: "invoice copilot", kind: "an AI agent for PayPal invoices (PayPal AI Hackathon 2026)",
+      desc: "Creates and sends PayPal invoices from plain chat in English, Hindi and Hinglish. Includes confirmation cards, an Autopilot mode with amount limits, an audit log, an MCP server with spending caps, and a promise-to-pay tracker that pauses reminders until the promised date.",
+      links: [{ label: "visit", url: "https://paypal-ai.onrender.com/" }, { label: "source", url: "https://github.com/Nimisha987/paypal-ai" }]
+    },
+    {
+      name: "vayudrishti", kind: "a cyclone prediction project", desc: "",
+      links: [{ label: "visit", url: "https://d3ncm9i1jhpc0.cloudfront.net" }, { label: "source", url: "https://github.com/Nimisha987/VayuDrishti---Cyclone-Prediction" }]
+    },
+    {
+      name: "rca assistant", kind: "an AI root cause analysis module for API manufacturing", desc: "Reads an incident document (PDF, email or pasted text) and fills the deviation, 5 Whys, fishbone, root cause and CAPA sections for a quality professional to review, edit and save. A LangGraph pipeline on Groq streams each step over Server-Sent Events. AI suggestions stay unverified until a person confirms them, with confidence levels and a missing-evidence checklist. Built with React, Redux Toolkit, FastAPI and PostgreSQL.",
+      links: [{ label: "visit", url: "https://frontend-chi-navy-k9tv8kx08p.vercel.app/" }, { label: "source", url: "https://github.com/Nimisha987/rca" }]
+    },
+    {
+      name: "agentic qa", kind: "an agent-based question answering app", desc: "",
+      links: [{ label: "visit", url: "https://agentic-qa-nkfj.onrender.com/" }, { label: "source", url: "https://github.com/Nimisha987/agentic-qa" }]
+    },
+    {
+      name: "wasteflow", kind: "an AI-powered smart waste management prototype", desc: "A dashboard for planning waste collection: estimated bin fill levels, collection priorities, forecasts, scenario simulation and model evaluation. Uses about 219,000 simulated records for 300 bins across five Delhi wards (2018 to 2019), with data in Amazon S3 and ML experiments in Amazon SageMaker. FastAPI backend on Render, frontend on Vercel.",
+      links: [{ label: "visit", url: "https://wasteflow-bice.vercel.app/" }, { label: "source", url: "https://github.com/Nimisha987/wasteflow" }]
+    }
+  ],
+  education: [
+    {
+      role: "B.Tech, Information Technology",
+      org: "KIET Group of Institutions, Ghaziabad",
+      orgUrl: "",
+      badge: "",
+      dates: "2024 – 2028",
+      summary: "CGPA: 8.43",
+      points: []
+    },
+    {
+      role: "certifications",
+      org: "",
+      orgUrl: "",
+      badge: "",
+      dates: "",
+      summary: "",
+      points: [
+        { title: "AWS Certified Cloud Practitioner (CLF-C02)", text: "" },
+        { title: "AWS Certified AI Practitioner (AIF-C01)", text: "" },
+        { title: "Cisco Networking Essentials", text: "" }
+      ]
+    }
+  ],
+  skills: [
+    { label: "AI / ML", items: "LLM APIs (Claude, Gemini, Groq, OpenRouter), RAG, tool calling, MCP, streaming, TensorFlow/Keras, LightGBM, Grad-CAM, spaCy" },
+    { label: "Backend", items: "Python (primary), FastAPI, Flask, REST APIs, SQLAlchemy, Pydantic, Server-Sent Events, OAuth, webhooks" },
+    { label: "Frontend", items: "React, Next.js (App Router), TypeScript, JavaScript, Redux Toolkit, TanStack Query, shadcn/ui, Recharts, Playwright, MSW" },
+    { label: "Data and cloud", items: "SQL, MySQL, PostgreSQL, SQLite, Vercel, AWS (Certified Cloud and AI Practitioner), Docker" },
+    { label: "Workflow", items: "Git/GitHub (fork-based PRs, CI, code review), Claude Code, 590+ DSA problems" }
+  ],
+  highlights: [
+    { role: "highlights", org: "", orgUrl: "", badge: "", dates: "", summary: "", points: [
+      { title: "PayPal AI Hackathon 2026", text: "Built Invoice Copilot." },
+      { title: "HCL AI Amplified Challenge, Round 2", text: "Selected for the national-level round, building an AI-powered personalized learning-path recommender." },
+      { title: "590+ DSA problems solved", text: "LeetCode 266+, CodeChef 327+, rating 987." }
+    ] }
+  ],
+  footer: "nimisha"
+};
+/* ====== END EDIT ====== */
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const GH = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>';
+const link = (url, text) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(text)}</a>` : esc(text);
+
+document.title = DATA.name + " - Full Stack and AIML Developer";
+$("name").textContent = DATA.name;
+$("handle").textContent = DATA.handle;
+$("tagline").textContent = DATA.tagline;
+$("sig").textContent = DATA.footer;
+
+$("socials").innerHTML = DATA.socials.map((s) =>
+  `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join("");
+
+const card = (e) => `
+  <article class="card">
+    <h3>${esc(e.role)}${e.org ? " at " + link(e.orgUrl, e.org) : ""}${e.badge ? `<span class="badge">${esc(e.badge)}</span>` : ""}</h3>
+    ${e.dates ? `<div class="date">${esc(e.dates)}</div>` : ""}
+    ${e.summary ? `<p class="summary">${esc(e.summary)}</p>` : ""}
+    ${e.points && e.points.length ? `<ul class="points">${e.points.map((p) =>
+      `<li><b>${link(p.url, p.title)}</b>${p.text ? `<span>${esc(p.text)}</span>` : ""}</li>`).join("")}</ul>` : ""}
+  </article>`;
+$("experience").innerHTML = DATA.experience.map(card).join("");
+$("skills").innerHTML = DATA.skills.map((k) => `<dl class="skill"><dt>${esc(k.label)}</dt><dd>${esc(k.items)}</dd></dl>`).join("");
+$("highlights").innerHTML = DATA.highlights.map(card).join("");
+$("education").innerHTML = DATA.education.map(card).join("");
+
+$("work").innerHTML = DATA.work.map((w) => `
+  <article class="card">
+    <h3>${esc(w.name)}</h3>
+    <p class="sub">${esc(w.kind)}</p>
+    <div class="pills">${w.links.map((l) => {
+      const src = /source|github|code/i.test(l.label);
+      return `<a class="pill ${src ? "" : "primary"}" href="${esc(l.url)}" target="_blank" rel="noopener">${src ? GH : ""}${esc(l.label)}${src ? "" : " &#8599;"}</a>`;
+    }).join("")}</div>
+    ${w.desc ? `<p class="desc">${esc(w.desc)}</p>` : ""}
+  </article>`).join("");
+
+$("theme").addEventListener("click", () => {
+  const root = document.documentElement;
+  const dark = getComputedStyle(root).getPropertyValue("--bg").trim() === "#0d0d0d";
+  root.setAttribute("data-theme", dark ? "light" : "dark");
+});
+</script>
+</body>
+</html>
